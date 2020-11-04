@@ -125,13 +125,16 @@
    ;;;;; More built-in UI
    `(region                                   ((,class (:background ,bg-hl :distant-foreground ,fg0))))
    `(highlight                                ((,class (:foreground ,bg3 :background ,fg3))))
-   `(hl-line                                  ((,class (:background ,hl-line))))
+   ;; `(hl-line                                  ((,class (:background ,hl-line))))
+   `(hl-line-face                             ((,class (:background ,hl-line)) (t :weight bold)))
+   `(hl-line                                  ((,class (:background ,hl-line :extend t)) (t :weight bold))) ; old emacsen
    `(fringe                                   ((,class (:background ,bg1 :foreground ,fg4))))
    `(cursor                                   ((,class (:background ,cursor))))
    `(show-paren-match-face                    ((,class (:background ,warning))))
    `(show-paren-match                         ((t (:foreground ,accent :background ,bg4 :bold t))))
    `(show-paren-mismatch                      ((t (:background ,warning))))
-   `(isearch                                  ((,class (:bold nil :foreground ,accent :background ,bg4))))
+   ;; `(isearch                                  ((,class (:bold nil :foreground ,accent :background ,bg4))))
+   `(isearch                                  ((t (:bold t :foreground ,tron-orange :background ,bg4))))
    `(vertical-border                          ((,class (:foreground ,fg4))))
    `(minibuffer-prompt                        ((,class (:foreground ,tron-bluegreen :weight normal))))
    `(default-italic                           ((,class (:italic t))))
@@ -485,10 +488,12 @@
 
    ;;;;; Ivy
    `(ivy-confirm-face                         ((t (:inherit minibuffer-prompt :foreground ,keyword))))
-   `(ivy-current-match                        ((t (:background ,bg-hl :extend t))))
+   ;; `(ivy-current-match                        ((t (:background ,bg-hl :extend t))))
+   `(ivy-current-match                        ((t (:underline t :extend t))))
    `(ivy-highlight-face                       ((t (:inherit font-lock-builtin-face))))
    `(ivy-match-required-face                  ((t (:inherit minibuffer-prompt :foreground ,warning))))
-   `(ivy-minibuffer-match-face-1              ((t (:foreground ,tron-lightblue))))
+   ;; `(ivy-minibuffer-match-face-1              ((t (:foreground ,tron-lightblue))))
+   `(ivy-minibuffer-match-face-1              ((t (:foreground ,tron-orange))))
    `(ivy-minibuffer-match-face-2              ((t (:inherit ivy-minibuffer-match-face-1))))
    `(ivy-minibuffer-match-face-3              ((t (:inherit ivy-minibuffer-match-face-2))))
    `(ivy-minibuffer-match-face-4              ((t (:inherit ivy-minibuffer-match-face-2))))
@@ -501,11 +506,12 @@
    `(counsel-key-binding                      ((t (:foreground ,var))))
 
    ;;;;; Swiper
-   `(swiper-match-face-1                      ((t (:inherit ivy-minibuffer-match-face-1))))
-   `(swiper-match-face-2                      ((t (:inherit ivy-minibuffer-match-face-2))))
-   `(swiper-match-face-3                      ((t (:inherit ivy-minibuffer-match-face-3))))
-   `(swiper-match-face-4                      ((t (:inherit ivy-minibuffer-match-face-4))))
-   `(swiper-line-face                         ((t (:foreground ,fg3 :background ,bg-hl :extend t))))
+   ;; `(swiper-match-face-1                      ((t (:inherit ivy-minibuffer-match-face-1))))
+   ;; `(swiper-match-face-2                      ((t (:inherit ivy-minibuffer-match-face-2))))
+   ;; `(swiper-match-face-3                      ((t (:inherit ivy-minibuffer-match-face-3))))
+   ;; `(swiper-match-face-4                      ((t (:inherit ivy-minibuffer-match-face-4))))
+   ;; `(swiper-line-face                         ((t (:foreground ,fg3 :background ,bg-hl :extend t))))
+   `(swiper-line-face                         ((t (:underline t))))
 
    ;;;;; Git gutter & git gutter fringe
    `(git-gutter:added                         ((t (:background ,vc-g :foreground ,vc-g :weight normal))))
